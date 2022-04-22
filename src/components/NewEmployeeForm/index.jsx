@@ -1,4 +1,6 @@
 import React, { useState, useRef } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import employeeActions from '../../redux/features/employee/actions'
 import DatePicker from 'react-datepicker'
 import Select from 'react-select'
 import 'react-datepicker/dist/react-datepicker.css'
@@ -9,7 +11,10 @@ import { ModalWh } from 'modalwh-oc14'
 const NewEmployeeForm = () => {
   const [modalState, setModalState] = useState(false)
 
+  const dispatch = useDispatch()
+
   const form = useRef(null)
+
   const [birthDate, setBirthDate] = useState()
   const [startDate, setStartDate] = useState()
   const [selectedState, setSelectedState] = useState(statesList[0])
@@ -27,15 +32,12 @@ const NewEmployeeForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-
     const data = new FormData(form.current)
-    // data.set('birthDate', birthDate.toLocaleDateString('en-US'))
-    // data.set('startDate', startDate.toLocaleDateString('en-US'))
-
-    console.log(JSON.stringify(Object.fromEntries(data)))
-
+    dispatch(employeeActions.addEmployee(Object.fromEntries(data)))
     resetForm(e)
     setModalState(true)
+    // data.set('birthDate', birthDate.toLocaleDateString('en-US'))
+    // data.set('startDate', startDate.toLocaleDateString('en-US'))
   }
 
   return (

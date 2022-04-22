@@ -4,8 +4,11 @@ import Select from 'react-select'
 import 'react-datepicker/dist/react-datepicker.css'
 import statesList from '../../data/states.js'
 import departmentsList from '../../data/departments.js'
+import { ModalWh } from 'modalwh-oc14'
 
 const NewEmployeeForm = () => {
+  const [modalState, setModalState] = useState(false)
+
   const form = useRef(null)
   const [birthDate, setBirthDate] = useState()
   const [startDate, setStartDate] = useState()
@@ -32,6 +35,7 @@ const NewEmployeeForm = () => {
     console.log(JSON.stringify(Object.fromEntries(data)))
 
     resetForm(e)
+    setModalState(true)
   }
 
   return (
@@ -92,6 +96,9 @@ const NewEmployeeForm = () => {
           <button type="submit">Save</button>
         </div>
       </form>
+      <ModalWh modalState={modalState} setModalState={setModalState}>
+        Employee Created!
+      </ModalWh>
     </>
   )
 }

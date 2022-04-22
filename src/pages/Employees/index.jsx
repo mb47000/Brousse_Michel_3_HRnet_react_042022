@@ -1,10 +1,14 @@
-import { selectEmployees } from '../../redux/selectors'
-import { useSelector } from 'react-redux'
+import Title from '../../components/Title'
+import { Link } from 'react-router-dom'
+import EmployeeTable from '../../components/EmployeeTable'
 
 const Employees = () => {
-  const employees = useSelector(selectEmployees)
-  console.log(employees)
-  return <div>Employees</div>
+  return (
+    <div className="container">
+      <Title title={'Current Employees'} />
+      <EmployeeTable />
+      <Link to="/">Home</Link>
+    </div>
+  )
 }
-
 export default Employees

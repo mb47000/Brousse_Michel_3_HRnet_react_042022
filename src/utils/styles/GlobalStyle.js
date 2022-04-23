@@ -6,6 +6,10 @@ const GlobalStyle = createGlobalStyle`
 }
 
 #root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .title {
@@ -20,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: fit-content;
 }
 
 label {
@@ -31,6 +36,7 @@ label {
 .address {
     margin-top: 10px;
     margin-bottom: 10px;
+    width: auto;
 }
 `
 

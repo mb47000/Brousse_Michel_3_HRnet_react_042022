@@ -1,0 +1,18 @@
+.set-sorting {
+  display: inline-flex;
+  flex-direction: column;
+  width: min-content;
+  padding: 0;
+  margin: 0;
+  color: #dcdcdc;
+  margin-left: 1rem;
+}
+.set-sorting .fas {
+  line-height: 0.5rem;
+}
+.set-sorting--ascending .fa-sort-up {
+  color: #7e84de;
+}
+.set-sorting--descending .fa-sort-down {
+  color: #7e84de;
+}

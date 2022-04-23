@@ -36,8 +36,6 @@ const NewEmployeeForm = () => {
     dispatch(employeeActions.addEmployee(Object.fromEntries(data)))
     resetForm(e)
     setModalState(true)
-    // data.set('birthDate', birthDate.toLocaleDateString('en-US'))
-    // data.set('startDate', startDate.toLocaleDateString('en-US'))
   }
 
   return (

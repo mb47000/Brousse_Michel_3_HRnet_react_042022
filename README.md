@@ -1,10 +1,10 @@
-# Getting Started with Create React App
+# OC Project 14 - Faites passer une librairie jQuery vers React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+HrNet React Version
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, after you have download and install the dependencies with npm i or yarn , you can run:
 
 ### `npm start`
 
